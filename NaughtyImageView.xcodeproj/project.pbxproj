@@ -13,6 +13,7 @@
 		0A036EE41B531C1500F03503 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A036EE31B531C1500F03503 /* Images.xcassets */; };
 		0A036EE71B531C1500F03503 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A036EE51B531C1500F03503 /* LaunchScreen.xib */; };
 		0A036EF31B531C1500F03503 /* NaughtyImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A036EF21B531C1500F03503 /* NaughtyImageViewTests.swift */; };
+		0A036EFD1B531DF600F03503 /* NaughtyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A036EFC1B531DF600F03503 /* NaughtyImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0A036EEC1B531C1500F03503 /* NaughtyImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaughtyImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A036EF11B531C1500F03503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A036EF21B531C1500F03503 /* NaughtyImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaughtyImageViewTests.swift; sourceTree = "<group>"; };
+		0A036EFC1B531DF600F03503 /* NaughtyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NaughtyImageView.swift; path = Source/NaughtyImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		0A036ED91B531C1500F03503 /* NaughtyImageView */ = {
 			isa = PBXGroup;
 			children = (
+				0A036EFC1B531DF600F03503 /* NaughtyImageView.swift */,
 				0A036EDC1B531C1500F03503 /* AppDelegate.swift */,
 				0A036EDE1B531C1500F03503 /* ViewController.swift */,
 				0A036EE01B531C1500F03503 /* Main.storyboard */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A036EDF1B531C1500F03503 /* ViewController.swift in Sources */,
+				0A036EFD1B531DF600F03503 /* NaughtyImageView.swift in Sources */,
 				0A036EDD1B531C1500F03503 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
