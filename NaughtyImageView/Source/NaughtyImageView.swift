@@ -18,13 +18,20 @@ class NaughtyImageView: UIImageView {
     
     var positionMatrix = [CGPoint(x: 0, y: 0)]
     
-    var currentIndex = 0
+    var currentIndex = 0 {
+        didSet {
+            
+            var location = locateFrame(currentIndex)
+            
+            floatingImage.frame = CGRectMake(-location.x * frame.width, -location.y * frame.height, floatingImage.frame.width, floatingImage.frame.height)
+        }
+    }
     
     var displayLink: CADisplayLink!
     
     var naughtyAnimating = false
     
-    var fps = 2
+    var frameSkip = 2
     
     private var frameCount = 0
     
@@ -110,10 +117,6 @@ class NaughtyImageView: UIImageView {
         } else {
             currentIndex = 0
         }
-        
-        var location = locateFrame(currentIndex)
-        
-        floatingImage.frame = CGRectMake(-location.x * frame.width, -location.y * frame.height, floatingImage.frame.width, floatingImage.frame.height)
     }
     
     func startNaughtyAnimation() {
@@ -124,13 +127,12 @@ class NaughtyImageView: UIImageView {
     
     func callbackNaughtyAnimation() {
         
-        if frameCount == fps {
+        if frameCount == frameSkip {
             toNewFrame(currentIndex + 1)
             frameCount = 0
         } else {
             frameCount += 1
         }
-
         
     }
     
