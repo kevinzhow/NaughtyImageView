@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NaughtyImageView: UIImageView {
+public class NaughtyImageView: UIImageView {
 
     var horizontalImages: Int!
     
@@ -47,12 +47,12 @@ class NaughtyImageView: UIImageView {
         }
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         initFloatingImageView()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initFloatingImageView()
     }
