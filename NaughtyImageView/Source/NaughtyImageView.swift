@@ -125,7 +125,7 @@ public class NaughtyImageView: UIImageView {
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
 
-    public callbackNaughtyAnimation() {
+    public func callbackNaughtyAnimation() {
 
         if frameCount == frameSkip {
             toNewFrame(currentIndex + 1)
