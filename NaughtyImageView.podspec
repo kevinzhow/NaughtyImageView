@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NaughtyImageView"
-  s.version      = "0.2"
+  s.version      = "0.2.1"
   s.summary      = "UIImageView Can Animate Sprite Image"
 
   s.description  = <<-DESC
