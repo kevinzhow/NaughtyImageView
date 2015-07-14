@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9A76F8CC-1199-44DA-8C50-4EA2976D0833</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NaughtyImageView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>66A3868364B0266C1D2ABE04FB26E655E5F69297</key>
+		<string>github.com:kevinzhow/NaughtyImageView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NaughtyImageView.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>66A3868364B0266C1D2ABE04FB26E655E5F69297</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:kevinzhow/NaughtyImageView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>66A3868364B0266C1D2ABE04FB26E655E5F69297</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>66A3868364B0266C1D2ABE04FB26E655E5F69297</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NaughtyImageView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
