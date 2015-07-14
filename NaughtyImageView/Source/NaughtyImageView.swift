@@ -10,15 +10,15 @@ import UIKit
 
 public class NaughtyImageView: UIImageView {
 
-    var horizontalImages: Int!
+    public var horizontalImages: Int!
 
-    var verticalImages: Int!
+    public var verticalImages: Int!
 
     var floatingImage: UIImageView!
 
     var positionMatrix = [CGPoint(x: 0, y: 0)]
 
-    var currentIndex = 0 {
+    public var currentIndex = 0 {
         didSet {
 
             var location = locateFrame(currentIndex)
@@ -29,13 +29,13 @@ public class NaughtyImageView: UIImageView {
 
     var displayLink: CADisplayLink!
 
-    var naughtyAnimating = false
+    public var naughtyAnimating = false
 
-    var frameSkip = 0
+    public var frameSkip = 0
 
     private var frameCount = 0
 
-    var debug = false {
+    public var debug = false {
         didSet {
             if debug {
                 clipsToBounds = false
@@ -62,7 +62,7 @@ public class NaughtyImageView: UIImageView {
         addSubview(floatingImage)
     }
 
-    func setupWithImage(newImage: UIImage, horizontalImages: Int, verticalImages: Int) {
+    public func setupWithImage(newImage: UIImage, horizontalImages: Int, verticalImages: Int) {
 
         if !debug {
             clipsToBounds = true
@@ -110,7 +110,7 @@ public class NaughtyImageView: UIImageView {
         return location
     }
 
-    func toNewFrame(frameIndex: Int) {
+    public func toNewFrame(frameIndex: Int) {
 
         if frameIndex + 1 <= positionMatrix.count {
             currentIndex = frameIndex
@@ -119,13 +119,13 @@ public class NaughtyImageView: UIImageView {
         }
     }
 
-    func startNaughtyAnimation() {
+    public func startNaughtyAnimation() {
         naughtyAnimating = true
         displayLink = CADisplayLink(target: self, selector: Selector("callbackNaughtyAnimation"))
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
 
-    func callbackNaughtyAnimation() {
+    public callbackNaughtyAnimation() {
 
         if frameCount == frameSkip {
             toNewFrame(currentIndex + 1)
@@ -136,7 +136,7 @@ public class NaughtyImageView: UIImageView {
 
     }
 
-    func stopNaughtyAnimation() {
+    public func stopNaughtyAnimation() {
         naughtyAnimating = false
         displayLink.invalidate()
     }
