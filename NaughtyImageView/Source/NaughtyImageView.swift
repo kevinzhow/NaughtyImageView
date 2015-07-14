@@ -31,7 +31,7 @@ class NaughtyImageView: UIImageView {
     
     var naughtyAnimating = false
     
-    var frameSkip = 2
+    var frameSkip = 0
     
     private var frameCount = 0
     

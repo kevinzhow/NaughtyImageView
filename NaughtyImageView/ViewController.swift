@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        starImageView.frame = CGRectMake(view.frame.width/2.0 - 36.5/2.0, 100, 36.5, 37.5)
+        starImageView.frame = CGRectMake(view.frame.width/2.0 - 45.5/2.0, 100, 45.5, 45.5)
         
         starImageView.debug = false
         
         view.addSubview(starImageView)
         
-        starImageView.setupWithImage(UIImage(named: "star")!, horizontalImages: 6, verticalImages: 4)
+        starImageView.setupWithImage(UIImage(named: "star")!, horizontalImages: 9, verticalImages: 8)
         
         slider.maximumValue = Float(starImageView.horizontalImages * starImageView.verticalImages) - 1
         
