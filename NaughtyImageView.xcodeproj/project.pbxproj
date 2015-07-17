@@ -159,6 +159,7 @@
 		0A036ECF1B531C1500F03503 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = kevinzhow;
 				TargetAttributes = {
@@ -413,6 +414,7 @@
 				0A036EF81B531C1500F03503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A036EF91B531C1500F03503 /* Build configuration list for PBXNativeTarget "NaughtyImageViewTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +423,7 @@
 				0A036EFB1B531C1500F03503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
