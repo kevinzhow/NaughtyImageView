@@ -21,7 +21,7 @@ public class NaughtyImageView: UIImageView {
     public var currentIndex = 0 {
         didSet {
             
-            var location = locateFrame(currentIndex)
+            let location = locateFrame(currentIndex)
             
             floatingImage.frame = CGRectMake(-location.x * frame.width, -location.y * frame.height, floatingImage.frame.width, floatingImage.frame.height)
         }
@@ -58,7 +58,7 @@ public class NaughtyImageView: UIImageView {
         initFloatingImageView()
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initFloatingImageView()
     }
@@ -112,7 +112,7 @@ public class NaughtyImageView: UIImageView {
     
     func locateFrame(frameIndex: Int) -> CGPoint {
         
-        var location: CGPoint = positionMatrix[frameIndex]
+        let location: CGPoint = positionMatrix[frameIndex]
         
         return location
     }

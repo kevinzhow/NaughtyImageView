@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     func valueChanged(slider: UISlider) {
         
-        var frameIndex = Int(slider.value)
+        let frameIndex = Int(slider.value)
         
         starImageView.toNewFrame(frameIndex)
         
