@@ -8,44 +8,44 @@
 
 import UIKit
 
-public class NaughtyImageView: UIImageView {
+open class NaughtyImageView: UIImageView {
     
-    public var horizontalImages: Int!
+    open var horizontalImages: Int!
     
-    public var verticalImages: Int!
+    open var verticalImages: Int!
     
     var floatingImage: UIImageView!
     
     var positionMatrix = [CGPoint(x: 0, y: 0)]
     
-    public var currentIndex = 0 {
+    open var currentIndex = 0 {
         didSet {
             
             let location = locateFrame(currentIndex)
             
-            floatingImage.frame = CGRectMake(-location.x * frame.width, -location.y * frame.height, floatingImage.frame.width, floatingImage.frame.height)
+            floatingImage.frame = CGRect(x: -location.x * frame.width, y: -location.y * frame.height, width: floatingImage.frame.width, height: floatingImage.frame.height)
         }
     }
     
     var displayLink: CADisplayLink!
     
-    public var naughtyAnimating = false
+    open var naughtyAnimating = false
     
-    public var frameSkip = 0
+    open var frameSkip = 0
     
-    private var frameCount = 0
+    fileprivate var frameCount = 0
     
-    public var loop = true
+    open var loop = true
     
-    private var finished = false
+    fileprivate var finished = false
     
-    public var naughtyAnimationDidStop: ((Bool) -> Void)?
+    open var naughtyAnimationDidStop: ((Bool) -> Void)?
     
-    public var debug = false {
+    open var debug = false {
         didSet {
             if debug {
                 clipsToBounds = false
-                layer.borderColor = UIColor.redColor().CGColor
+                layer.borderColor = UIColor.red.cgColor
                 layer.borderWidth = 1.0
             } else {
                 clipsToBounds = true
@@ -64,24 +64,24 @@ public class NaughtyImageView: UIImageView {
     }
     
     func initFloatingImageView() {
-        floatingImage = UIImageView(frame: CGRectZero)
+        floatingImage = UIImageView(frame: CGRect.zero)
         addSubview(floatingImage)
     }
     
-    public func setupWithImage(newImage: UIImage, horizontalImages: Int, verticalImages: Int) {
+    open func setupWithImage(_ newImage: UIImage, horizontalImages: Int, verticalImages: Int) {
         
         if !debug {
             clipsToBounds = true
         }
         
-        floatingImage.frame = CGRectMake(0, 0, frame.width * CGFloat(horizontalImages), frame.height * CGFloat(verticalImages))
+        floatingImage.frame = CGRect(x: 0, y: 0, width: frame.width * CGFloat(horizontalImages), height: frame.height * CGFloat(verticalImages))
         
         floatingImage.image = newImage
         
         self.horizontalImages = horizontalImages
         self.verticalImages = verticalImages
         
-        floatingImage.contentMode = UIViewContentMode.TopLeft
+        floatingImage.contentMode = UIViewContentMode.topLeft
         
         var index = 1
         
@@ -110,14 +110,14 @@ public class NaughtyImageView: UIImageView {
         
     }
     
-    func locateFrame(frameIndex: Int) -> CGPoint {
+    func locateFrame(_ frameIndex: Int) -> CGPoint {
         
         let location: CGPoint = positionMatrix[frameIndex]
         
         return location
     }
     
-    public func toNewFrame(frameIndex: Int) {
+    open func toNewFrame(_ frameIndex: Int) {
         
         if frameIndex + 1 <= positionMatrix.count {
             currentIndex = frameIndex
@@ -132,14 +132,14 @@ public class NaughtyImageView: UIImageView {
         }
     }
     
-    public func startNaughtyAnimation() {
+    open func startNaughtyAnimation() {
         finished = false
         naughtyAnimating = true
-        displayLink = CADisplayLink(target: self, selector: Selector("callbackNaughtyAnimation"))
-        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        displayLink = CADisplayLink(target: self, selector: #selector(NaughtyImageView.callbackNaughtyAnimation))
+        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
     }
     
-    public func callbackNaughtyAnimation() {
+    open func callbackNaughtyAnimation() {
         
         if frameCount == frameSkip {
             toNewFrame(currentIndex + 1)
@@ -150,7 +150,7 @@ public class NaughtyImageView: UIImageView {
         
     }
     
-    public func stopNaughtyAnimation() {
+    open func stopNaughtyAnimation() {
         naughtyAnimating = false
         displayLink.invalidate()
         

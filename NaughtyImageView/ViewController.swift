@@ -12,12 +12,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var slider: UISlider!
     
-    var starImageView = NaughtyImageView(frame: CGRectZero)
+    var starImageView = NaughtyImageView(frame: CGRect.zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        starImageView.frame = CGRectMake(view.frame.width/2.0 - 32/2.0, 100, 32, 32)
+        starImageView.frame = CGRect(x: view.frame.width/2.0 - 32/2.0, y: 100, width: 32, height: 32)
         
         starImageView.debug = false
         
@@ -29,9 +29,9 @@ class ViewController: UIViewController {
         
         slider.value = 0
         
-        slider.continuous = true
+        slider.isContinuous = true
         
-        slider.addTarget(self, action: "valueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        slider.addTarget(self, action: #selector(ViewController.valueChanged(_:)), for: UIControlEvents.valueChanged)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func valueChanged(slider: UISlider) {
+    func valueChanged(_ slider: UISlider) {
         
         let frameIndex = Int(slider.value)
         
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func start(sender: AnyObject) {
+    @IBAction func start(_ sender: AnyObject) {
         if starImageView.naughtyAnimating {
             starImageView.stopNaughtyAnimation()
         } else {
