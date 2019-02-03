@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         slider.isContinuous = true
         
-        slider.addTarget(self, action: #selector(ViewController.valueChanged(_:)), for: UIControlEvents.valueChanged)
+        slider.addTarget(self, action: #selector(ViewController.valueChanged(_:)), for: UIControl.Event.valueChanged)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func valueChanged(_ slider: UISlider) {
+    @objc func valueChanged(_ slider: UISlider) {
         
         let frameIndex = Int(slider.value)
         

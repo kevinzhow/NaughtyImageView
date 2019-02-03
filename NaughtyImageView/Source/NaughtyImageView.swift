@@ -81,7 +81,7 @@ open class NaughtyImageView: UIImageView {
         self.horizontalImages = horizontalImages
         self.verticalImages = verticalImages
         
-        floatingImage.contentMode = UIViewContentMode.topLeft
+        floatingImage.contentMode = .topLeft
         
         var index = 1
         
@@ -136,10 +136,10 @@ open class NaughtyImageView: UIImageView {
         finished = false
         naughtyAnimating = true
         displayLink = CADisplayLink(target: self, selector: #selector(NaughtyImageView.callbackNaughtyAnimation))
-        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        displayLink.add(to: .current, forMode: .common)
     }
     
-    open func callbackNaughtyAnimation() {
+    @objc open func callbackNaughtyAnimation() {
         
         if frameCount == frameSkip {
             toNewFrame(currentIndex + 1)
